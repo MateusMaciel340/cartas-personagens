@@ -1,33 +1,11 @@
-import { Personagem } from "./assets/modules/personagem.js";
+import { Personagem } from "./modules/personagem.js";
+import { PersonagemView } from "./components/personagem-view.js";
 
-/* const personagemPedrinho = {
-    nome: 'Pedrinho',
-    vida: 7,
-    mana: 12,
-    level: 5,
-    tipo: 'Mago',
-} */
+const personagemPedrinho = new Personagem('Pedro', 5, 'Mago');
+const personagemJose = new Personagem('José', 3, 'Arqueiro');
 
-/* const personagemJose = {
-    nome: 'Jose',
-    vida: 7,
-    mana: 6,
-    level: 3,
-    tipo: 'Arqueiro',
-} */
+const personagens = [personagemPedrinho, personagemJose];
 
-const personagemPedrinho = new Personagem();
-personagemPedrinho.nome = 'Pedrinho';
-personagemPedrinho.mana = 12;
-personagemPedrinho.vida = 7;
-personagemPedrinho.tipo = 'Mago';
-personagemPedrinho.level = 5;
+new PersonagemView(personagens).render();
 
-const personagemJose = new Personagem();
-personagemJose.nome = 'Jose';
-personagemJose.tipo = 'Arqueiro';
-personagemJose.level = 3;
-
-console.log(`Insignia de ` + personagemPedrinho.nome + ': ' + personagemPedrinho.obterInsignia());
-
-console.log(`Insignia de ` + personagemJose.nome + ': ' + personagemJose.obterInsignia());
+console.log(personagemJose.vida);
